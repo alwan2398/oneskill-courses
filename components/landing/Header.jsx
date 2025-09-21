@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowRight, GraduationCapIcon } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { navItems } from "@/constant";
+import { mobileMenuVariants, navItems } from "@/constant";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,39 +12,24 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const headerVariants = {
-    initial: { y: -100, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    scrolled: {
-      backdropFilter: "blur(20px)",
-      backgroundColor: "rgba(255, 255, 255, 0.8)",
-      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
-    },
-  };
-  const mobileMenuVariants = {
-    closed: { opacity: 0, height: 0 },
-    open: { opacity: 1, height: "auto" },
-  };
-  const dropdownVariants = {
-    hidden: { opacity: 0, y: -10, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1 },
-  };
-
   return (
     <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={cn(
-        `fixed top-0 right-0 left-0 z-50 transition-all duration-300`
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled
+          ? "bg-background/70 shadow-md backdrop-blur-md"
+          : "bg-transparent"
       )}
-      variants={headerVariants}
-      initial="initial"
-      animate={isScrolled ? "scrolled" : "animate"}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-20">
@@ -59,10 +44,10 @@ export default function Header() {
               className="flex items-center space-x-2"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-rose-500 to-rose-700">
-                <Sparkles className="h-5 w-5 text-white" />
+                <GraduationCapIcon className="h-5 w-5 text-white" />
               </div>
-              <span className="bg-gradient-to-r from-rose-500 to-rose-700 bg-clip-text text-xl font-bold text-transparent">
-                Acme Inc.
+              <span className="bg-gradient-to-r from-rose-500 to-rose-700 bg-clip-text text-xl font-bold text-transparent font-secondary">
+                OneSkill
               </span>
             </Link>
           </motion.div>
@@ -70,7 +55,6 @@ export default function Header() {
             {navItems.map((item) => (
               <div className="relative" key={item.name}>
                 <Link
-                  prefetch={false}
                   href={item.href}
                   className="text-foreground flex items-center space-x-1 font-medium transition-colors duration-200 hover:text-rose-500"
                 >
@@ -82,7 +66,7 @@ export default function Header() {
           <div className="hidden items-center space-x-4 lg:flex">
             <Link
               prefetch={false}
-              href="/login"
+              href="/sign-in"
               className="text-foreground font-medium transition-colors duration-200 hover:text-rose-500"
             >
               Sign In
@@ -90,8 +74,8 @@ export default function Header() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 prefetch={false}
-                href="/signup"
-                className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-rose-500 to-rose-700 px-6 py-2.5 font-medium text-white transition-all duration-200 hover:shadow-lg"
+                href="/sign-up"
+                className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-rose-500 to-rose-700 px-5 py-2 font-medium text-white transition-all duration-200 hover:shadow-lg"
               >
                 <span>Get Started</span>
                 <ArrowRight className="h-4 w-4" />
@@ -135,7 +119,7 @@ export default function Header() {
                 <div className="space-y-2 px-4 py-2">
                   <Link
                     prefetch={false}
-                    href="/login"
+                    href="/sign-in"
                     className="text-foreground hover:bg-muted block w-full rounded-lg py-2.5 text-center font-medium transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -143,7 +127,7 @@ export default function Header() {
                   </Link>
                   <Link
                     prefetch={false}
-                    href="/signup"
+                    href="/sign-up"
                     className="block w-full rounded-lg bg-gradient-to-r from-rose-500 to-rose-700 py-2.5 text-center font-medium text-white transition-all duration-200 hover:shadow-lg"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

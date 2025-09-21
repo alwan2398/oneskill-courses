@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${fontPrimary.variable} ${fontSecondary.variable} antialiased`}
+        className={`${fontPrimary.variable} ${fontSecondary.variable} antialiased dark`}
       >
         <HomeProvider>{children}</HomeProvider>
       </body>
