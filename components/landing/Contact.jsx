@@ -1,4 +1,4 @@
-import { Globe, Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
@@ -15,17 +15,19 @@ export default function Contact() {
               Ada ide, pertanyaan, atau Feedback?
             </h2>
             <p className="my-auto mt-3 max-w-2xl text-base text-gray-300 md:text-lg">
-              Saya sangat suka feedback yang bikin produk ini makin keren
+              Saya sangat suka feedback anda yang membuat project ini berkembang
+              dan makin keren.
             </p>
             <div className="mt-8 flex items-center justify-center">
-              <Link href="https://wa.me/6281283020000" target="_blank">
+              <Link href="https://wa.link/srqagc" target="_blank">
                 <Button
                   size={"lg"}
                   className={
                     "bg-white text-rose-600 font-bold font-secondary hover:text-white hover:bg-red-800 transition-colors duration-500 cursor-pointer"
                   }
                 >
-                  Hubungi Saya
+                  Hubungi Saya{" "}
+                  <Mail className="text-primary hover:text-white" />
                 </Button>
               </Link>
             </div>

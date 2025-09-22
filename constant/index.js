@@ -120,17 +120,17 @@ export const fadeInAnimationVariants = {
 export const footerLinks = [
   {
     href: "https://www.instagram.com/alwan.balweel/",
-    icons: "/instagram.svg",
+    icons: "/icons/instagram.svg",
     alt: "Instagram",
   },
   {
     href: "https://www.tiktok.com/@alwan.balweel",
-    icons: "/tiktok.svg",
+    icons: "/icons/tiktok.svg",
     alt: "Tiktok",
   },
   {
     href: "https://github.com/alwan2398",
-    icons: "/github.svg",
+    icons: "/icons/github.svg",
     alt: "Github",
   },
 ];

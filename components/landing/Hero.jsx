@@ -101,7 +101,7 @@ export default function Hero() {
             </div>
             <div className="relative z-10 mt-16 w-full">
               <Image
-                src="/dashboard.webp"
+                src="/images/dashboard.webp"
                 alt="Dashboard Preview"
                 priority
                 width={1000}
@@ -122,7 +122,7 @@ export default function Hero() {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  <span className="font-medium">Best Pratices</span>
+                  <span className="font-medium">Preview Workspace</span>
                 </div>
               </div>
             </div>
