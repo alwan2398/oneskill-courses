@@ -1,6 +1,7 @@
 import { Poppins, Unbounded } from "next/font/google";
 import "./globals.css";
 import HomeProvider from "./provider";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const fontPrimary = Poppins({
   variable: "--font-primary",
@@ -21,12 +22,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${fontPrimary.variable} ${fontSecondary.variable} antialiased dark`}
-      >
-        <HomeProvider>{children}</HomeProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${fontPrimary.variable} ${fontSecondary.variable} antialiased dark`}
+        >
+          <HomeProvider>{children}</HomeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
