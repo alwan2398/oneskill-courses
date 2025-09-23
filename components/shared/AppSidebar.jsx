@@ -25,8 +25,9 @@ export function AppSidebar() {
         >
           <Link
             prefetch={false}
-            href="/course"
+            href="/courses"
             className="flex items-center space-x-2"
+            aria-label="OneSkill Home"
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-rose-500 to-rose-700">
               <GraduationCapIcon className="h-5 w-5 text-white" />

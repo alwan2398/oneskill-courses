@@ -23,7 +23,9 @@ export const ListMenu = ({ name, description, icon, color }) => {
           <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium">
             <span className="text-sm sm:text-lg">{name}</span>
           </figcaption>
-          <p className="text-sm font-normal text-white/60">{description}</p>
+          <p className="text-sm font-normal text-muted-foreground">
+            {description}
+          </p>
         </div>
       </div>
     </figure>
