@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
 
         {/* text */}
-        <span className="text-sm text-muted-foreground max-w-md text-center">
+        <span className="text-sm text-muted-foreground max-w-md text-center relative z-10">
           Follow Social Media Saya untuk update project terbaru dan kolaborasi
           dengan saya.
         </span>

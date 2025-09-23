@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen py-6 sm:py-14">
+    <div className="min-h-screen py-6 sm:py-14 mb-30 md:mb-0">
       <div className="pointer-events-none absolute inset-0 top-0 z-0 overflow-hidden">
         <div className="absolute -top-20 -left-20 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/30 via-primary/20 to-transparent opacity-50 blur-[100px]" />
         <div className="absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-gradient-to-bl from-primary/30 via-primary/20 to-transparent opacity-50 blur-[100px]" />

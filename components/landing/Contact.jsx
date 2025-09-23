@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 export default function Contact() {
   return (
     <div className="w-full" id="contact">
-      <section className="mx-auto max-w-7xl px-4 py-6 lg:px-8 lg:py-20">
+      <section className="mx-auto max-w-6xl px-4 py-6 lg:px-8 lg:py-20">
         <div className="relative isolate w-full overflow-hidden rounded-2xl bg-cta">
           <div className="relative isolate overflow-hidden px-4 py-12 sm:px-24">
             <p className="w-fit rounded-xl bg-white px-4 py-1 text-center text-base leading-7 font-semibold text-black uppercase lg:text-left">
