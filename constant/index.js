@@ -1,4 +1,17 @@
-import { Globe, Pencil, Lightbulb, Sparkles } from "lucide-react";
+import {
+  Globe,
+  Pencil,
+  Lightbulb,
+  Sparkles,
+  LucideLayoutGrid,
+  Folder,
+  Megaphone,
+  UserCog,
+  Code2,
+  PanelTop,
+  Palette,
+  Badge,
+} from "lucide-react";
 
 // nav menu
 export const navItems = [
@@ -134,3 +147,100 @@ export const footerLinks = [
     alt: "Github",
   },
 ];
+
+// sidebar links
+export const sidebarLinks = [
+  {
+    name: "Dashboard",
+    icon: LucideLayoutGrid,
+    href: "/courses",
+  },
+  {
+    name: "My Courses",
+    icon: Folder,
+    href: "/courses/my-course",
+  },
+  {
+    name: "Info App",
+    icon: Megaphone,
+    href: "/courses/info",
+  },
+  {
+    name: "Profile",
+    icon: UserCog,
+    href: "/courses/profile",
+  },
+];
+
+// Dashboard Menu
+export const stats = [
+  {
+    title: "Engineering",
+    value: "12,345",
+    change: "+12%",
+    changeType: "positive",
+    icon: Code2,
+    color: "text-blue-500",
+    bgColor: "bg-blue-500/10",
+    progressColor: "bg-blue-500",
+  },
+  {
+    title: "UI/UX Designer",
+    value: "45,678",
+    change: "+8.2%",
+    changeType: "positive",
+    icon: PanelTop,
+    color: "text-green-500",
+    bgColor: "bg-green-500/10",
+    progressColor: "bg-green-500",
+  },
+  {
+    title: "Graphic Designer",
+    value: "2,456",
+    change: "+15%",
+    changeType: "positive",
+    icon: Palette,
+    color: "text-purple-500",
+    bgColor: "bg-purple-500/10",
+    progressColor: "bg-purple-500",
+  },
+  {
+    title: "AI Productivity",
+    value: "34,567",
+    change: "-2.4%",
+    changeType: "negative",
+    icon: Badge,
+    color: "text-orange-500",
+    bgColor: "bg-orange-600/10",
+    progressColor: "bg-orange-500",
+  },
+];
+
+export let featuredAnimate = [
+  {
+    name: "Generate Cepat",
+    description: "AI ubah ide jadi materi instan",
+    icon: "⚡",
+    color: "#00C9A7",
+  },
+  {
+    name: "Review Materi",
+    description: "Lihat & pantau kontenmu",
+    icon: "📝",
+    color: "#FFB800",
+  },
+  {
+    name: "Video Materi",
+    description: "video sesuai langsung dari YouTube",
+    icon: "🎬",
+    color: "#FF3D71",
+  },
+  {
+    name: "Fleksibel dalam Belajar",
+    description: "Belajar kapan aja, di mana aja",
+    icon: "📱",
+    color: "#1E86FF",
+  },
+];
+
+featuredAnimate = Array.from({ length: 10 }, () => featuredAnimate).flat();
